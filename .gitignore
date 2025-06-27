@@ -1,0 +1,45 @@
+# Miscellaneous
+app_control_de_inventario_v3/*.class
+app_control_de_inventario_v3/*.log
+app_control_de_inventario_v3/*.pyc
+app_control_de_inventario_v3/*.swp
+app_control_de_inventario_v3/.DS_Store
+app_control_de_inventario_v3/.atom/
+app_control_de_inventario_v3/.build/
+app_control_de_inventario_v3/.buildlog/
+app_control_de_inventario_v3/.history
+app_control_de_inventario_v3/.svn/
+app_control_de_inventario_v3/.swiftpm/
+app_control_de_inventario_v3/migrate_working_dir/
+
+# IntelliJ related
+app_control_de_inventario_v3/*.iml
+app_control_de_inventario_v3/*.ipr
+app_control_de_inventario_v3/*.iws
+app_control_de_inventario_v3/.idea/
+.idea/
+
+# VS Code
+# Puedes descomentar esto si no quieres trackear configuración personal
+# app_control_de_inventario_v3/.vscode/
+
+# Flutter/Dart/Pub related
+app_control_de_inventario_v3/**/doc/api/
+app_control_de_inventario_v3/**/ios/Flutter/.last_build_id
+app_control_de_inventario_v3/.dart_tool/
+app_control_de_inventario_v3/.flutter-plugins
+app_control_de_inventario_v3/.flutter-plugins-dependencies
+app_control_de_inventario_v3/.pub-cache/
+app_control_de_inventario_v3/.pub/
+app_control_de_inventario_v3/build/
+
+# Symbolication related
+app_control_de_inventario_v3/app.*.symbols
+
+# Obfuscation related
+app_control_de_inventario_v3/app.*.map.json
+
+# Android Studio will place build artifacts here
+app_control_de_inventario_v3/android/app/debug
+app_control_de_inventario_v3/android/app/profile
+app_control_de_inventario_v3/android/app/release
