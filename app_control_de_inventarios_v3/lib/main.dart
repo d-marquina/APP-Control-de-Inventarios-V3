@@ -7,13 +7,15 @@ void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: InventoryApp(),
-    theme: ThemeData.dark(useMaterial3: true).copyWith(
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    theme: ThemeData.light(useMaterial3: true).copyWith(
+      colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
     ),
   ));
 }
 
 class InventoryApp extends StatefulWidget {
+  const InventoryApp({super.key});
+
   @override
   _InventoryAppState createState() => _InventoryAppState();
 }
@@ -49,7 +51,7 @@ class _InventoryAppState extends State<InventoryApp> {
           ? "🔁 Redireccionamiento activado"
           : response.body;
 
-      print("📅 Respuesta final:\n\$bodyText");
+      print("📅 Respuesta final:\n$bodyText");
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -77,10 +79,10 @@ class _InventoryAppState extends State<InventoryApp> {
     return InputDecoration(
       labelText: label,
       filled: true,
-      fillColor: Colors.deepPurple.withOpacity(0.1),
+      fillColor: Colors.blueAccent.withOpacity(0.1),
       border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.deepPurple.shade200),
+        borderSide: BorderSide(color: Colors.blueAccent.shade200),
         borderRadius: BorderRadius.circular(12),
       ),
     );
@@ -120,9 +122,9 @@ class _InventoryAppState extends State<InventoryApp> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 12),
               decoration: BoxDecoration(
-                color: Colors.deepPurple.withOpacity(0.1),
+                color: Colors.blueAccent.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.deepPurple.shade200),
+                border: Border.all(color: Colors.blueAccent.shade200),
               ),
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<String>(
@@ -149,22 +151,22 @@ class _InventoryAppState extends State<InventoryApp> {
                 ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                    backgroundColor: Colors.deepPurple,
+                    backgroundColor: Colors.blueAccent,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
                   onPressed: addItem,
                   icon: Icon(Icons.add_box),
-                  label: Text("Agregar"),
+                  label: Text("Agregar", style: TextStyle(color: Colors.white, fontSize: 16)),
                 ),
                 ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                    backgroundColor: Colors.purple.shade700,
+                    backgroundColor: Colors.blueAccent,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
                   onPressed: () => scanCodeAndSend(_selectedAction),
                   icon: Icon(Icons.qr_code_scanner),
-                  label: Text("Escanear"),
+                  label: Text("Escanear", style: TextStyle(color: Colors.white, fontSize: 16)),
                 ),
               ],
             ),
@@ -179,7 +181,7 @@ class QRScannerScreen extends StatefulWidget {
   final String scriptURL;
   final String action;
 
-  QRScannerScreen({required this.scriptURL, required this.action});
+  const QRScannerScreen({super.key, required this.scriptURL, required this.action});
 
   @override
   State<QRScannerScreen> createState() => _QRScannerScreenState();
@@ -220,7 +222,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
 
       if (mounted) {
         print("🔄 Código de estado: \${response.statusCode}");
-        print("📅 Respuesta final:\n\$mensaje");
+        print("📅 Respuesta final:\n$mensaje");
         Navigator.pop(context);
       }
     } catch (e) {
